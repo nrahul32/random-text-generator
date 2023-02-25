@@ -2,6 +2,8 @@ import './App.css';
 import axios from 'axios';
 import { Component } from 'react';
 import Output from './components/Output';
+import Paragraph from './components/Paragraph';
+import Format from './components/Format';
 
 class App extends Component {
   constructor(props) {
@@ -33,6 +35,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Random Text Generator</h1>
+        <Paragraph />
+        <Format />
+        <hr />
         <Output value={this.state.text} />
       </div>
     );
