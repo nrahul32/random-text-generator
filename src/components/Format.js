@@ -12,8 +12,9 @@ class Format extends Component {
     onChangeValue(event) {
         this.setState({
             value: event.target.value
+        }, function () {
+            this.props.onChange(this.state.value)
         })
-        console.log(this.state.value);
     }
 
     render() {
@@ -21,8 +22,8 @@ class Format extends Component {
             <div className="output" onChange={this.onChangeValue}>
                 Format:
                 <div>
-                    <input type={"radio"} value={"html"} name={"format"} defaultChecked /> HTML
-                    <input type={"radio"} value={"text"} name={"format"} /> Text
+                    <input type={"radio"} value={"html"} name={"format"} defaultChecked={this.props.value === "html"} /> HTML
+                    <input type={"radio"} value={"text"} name={"format"} defaultChecked={this.props.value !== "html"} /> Text
                 </div>
             </div>
         )

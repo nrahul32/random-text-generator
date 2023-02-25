@@ -12,9 +12,9 @@ class Paragraph extends Component {
     onChangeValue(event) {
         this.setState({
             value: event.target.value
+        }, function () {
+            this.props.onChange(this.state.value)
         })
-        event.preventDefault();
-        console.log(this.state.value);
     }
 
     render() {
@@ -22,7 +22,7 @@ class Paragraph extends Component {
             <div className="output" onChange={this.onChangeValue}>
                 Number of paragraphs:
                 <div>
-                    <input type={"number"} value={this.state.value} name={"paras"} defaultValue={2} />
+                    <input type={"number"} value={this.state.value} name={"paras"} />
                 </div>
             </div>
         )
