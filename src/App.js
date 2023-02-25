@@ -1,11 +1,18 @@
 import './App.css';
+import { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      Random Text Generator
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        Random Text Generator
+      </div>
+    );
+  }
 }
 
 export default App;
